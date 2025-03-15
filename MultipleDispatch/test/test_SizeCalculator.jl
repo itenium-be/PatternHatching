@@ -1,9 +1,9 @@
-include("Composite.jl")
-include("SizeCalculator.jl")
+include("../Composite.jl")
+include("../SizeCalculator.jl")
 
 using Test
 
-@testset "SizeCalculator Tests" begin
+@testitem "SizeCalculator Tests" begin
     # Test File
     file = File()
     calculator = SizeCalculator()

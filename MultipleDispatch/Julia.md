@@ -20,8 +20,9 @@ Julia
 
 - [Download Julia](https://julialang.org/downloads/)
 - [VSCode Extension](https://github.com/julia-vscode/julia-vscode)
+  - Might need to set `julia.executablePath` in settings
 
-Open "Julia: Start REPL"
+Run with `Control + F5` or Open "Julia: Start REPL"
 
 ```jl
 include("test_SizeCalculator.jl")
