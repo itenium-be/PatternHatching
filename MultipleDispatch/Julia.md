@@ -24,8 +24,9 @@ Julia
 Open "Julia: Start REPL"
 
 ```
-include("math_utils.jl")
-include("test_math_utils.jl")
+include("Composite.jl")
+include("SizeCalculator.jl")
+include("test_SizeCalculator.jl")
 ```
 
 
@@ -34,4 +35,10 @@ Visitor and Julia
 
 Visitor is a pattern that IS used in Java/.NET because these
 languages are Single Dispatch. Julia has Multiple Dispatch
-making Visitor obsolete.
+making Visitor unnecessary.
+
+Typically:
+
+- Single Dispatch: the method to call depends on one object (the runtime type of the object on which the method is called)
+- Double Dispatch: depends on two objects, the receiver and one argument (=Visitor)
+- Multiple Dispatch: depends on the runtime type of all arguments
