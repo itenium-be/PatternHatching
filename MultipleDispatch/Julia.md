@@ -23,9 +23,7 @@ Julia
 
 Open "Julia: Start REPL"
 
-```
-include("Composite.jl")
-include("SizeCalculator.jl")
+```jl
 include("test_SizeCalculator.jl")
 ```
 

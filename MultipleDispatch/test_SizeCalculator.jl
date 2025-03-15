@@ -1,5 +1,7 @@
+include("Composite.jl")
+include("SizeCalculator.jl")
+
 using Test
-using Main
 
 @testset "SizeCalculator Tests" begin
     # Test File
