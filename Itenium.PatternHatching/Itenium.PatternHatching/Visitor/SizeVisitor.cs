@@ -5,7 +5,7 @@ using File = Itenium.PatternHatching.Composite.File;
 namespace Itenium.PatternHatching.Visitor;
 
 /// <summary>
-/// Calculate the size of the files
+/// VISITOR: Calculate the size of the files
 /// </summary>
 public class SizeVisitor : IVisitor<int>
 {

@@ -5,7 +5,7 @@ using File = Itenium.PatternHatching.Composite.File;
 namespace Itenium.PatternHatching.Visitor;
 
 /// <summary>
-/// "cat": Print the content of a file
+/// VISITOR: "cat": Print the content of a file
 /// </summary>
 public class CatVisitor : IVisitor<string>
 {
