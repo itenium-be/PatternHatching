@@ -42,3 +42,7 @@ Designing with Patterns (p11)
 - COMPOSITE: to model the FileSystem (File/Directory : INode)
 - PROXY: to model symbolic links (Link : INode)
 - VISITOR: to add extra functionality without bloating the COMPOSITE (SizeVisitor : IVisitor<int>)
+
+See `Itenium.PatternHatching` for an implementation in C#
+and `MultipleDispatch` how VISITOR is not needed in a
+language such as Julia.
