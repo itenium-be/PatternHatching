@@ -3,6 +3,10 @@ Pattern Hatching
 
 Pattern Hatching: Design Patterns Applied by John Vlissides.
 
+- Boekenclub Session 1: p1 -> p34 (Composite, Proxy and Visitor)
+- Boekenclub Session 2: p34 -> p54 (Template Method, Singleton and Mediator)
+- Boekenclub Session 3: TBD
+
 
 Chapter 1
 ---------
@@ -46,3 +50,16 @@ Designing with Patterns (p11)
 See `Itenium.PatternHatching` for an implementation in C#
 and `MultipleDispatch` how VISITOR is not needed in a
 language such as Julia.
+
+
+### Multi-User Protection (p34)
+
+- TEMPLATE METHOD: have the base Node class implement security so the subclasses don't have to worry about it
+- SINGLETON: a "Multiton" implementation for the Users of the system
+- MEDIATOR: handle the two-way binding between Groups and Users
+
+
+Chapter 3
+---------
+
+Themes and Variations (p55)
