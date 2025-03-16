@@ -73,4 +73,20 @@ public class UserTests
         using var result = link.GetReader(_john);
         Assert.NotNull(result);
     }
+
+    [Fact]
+    public void FileGetReader_Throws_WithMessage()
+    {
+        var link = new Link(_erichFile, new AccessControl(_john));
+        var ex = Assert.Throws<UnauthorizedAccessException>(() => link.GetReader(_john));
+        Assert.Equal("File is Unreadable", ex.Message);
+    }
+
+    [Fact]
+    public void DirectoryGetReader_Throws_WithMessage()
+    {
+        var link = new Composite.Directory(new AccessControl(_john));
+        var ex = Assert.Throws<UnauthorizedAccessException>(() => link.GetReader(_erich));
+        Assert.Equal("Directory is Unreadable", ex.Message);
+    }
 }
