@@ -1,4 +1,6 @@
-﻿using Itenium.PatternHatching.Composite;
+﻿using System.IO.Abstractions;
+using Itenium.PatternHatching.Composite;
+using Itenium.PatternHatching.Singleton;
 using Itenium.PatternHatching.Visitor;
 
 namespace Itenium.PatternHatching.Proxy;
@@ -7,19 +9,28 @@ namespace Itenium.PatternHatching.Proxy;
 /// PROXY:
 /// Symbolic Link to a File or Directory
 /// </summary>
-public class Link(INode subject) : INode
+public class Link : Node
 {
-    public INode Subject => subject;
+    public Link(Node subject, AccessControl? accessControl = null) : base(accessControl)
+    {
+        Subject = subject;
+    }
 
-    public IEnumerable<INode> Children => subject.Children;
-    public bool Adopt(INode node) => subject.Adopt(node);
-    public bool Orphan(INode node) => subject.Orphan(node);
-    public StreamReader GetReader() => subject.GetReader();
+    public Node Subject { get; }
+
+    public override IEnumerable<Node> Children => Subject.Children;
+    public override bool Adopt(Node node) => Subject.Adopt(node);
+    public override bool Orphan(Node node) => Subject.Orphan(node);
+    protected override StreamReader GetReaderCore(User? user = null) => Subject.GetReader(user);
 
     #region Visitor
-    public T Accept<T>(IVisitor<T> visitor)
+    public override T Accept<T>(IVisitor<T> visitor)
     {
         return visitor.Visit(this);
     }
+    #endregion
+
+    #region Template Method
+    protected internal override IFileSystemInfo Info => Subject.Info;
     #endregion
 }

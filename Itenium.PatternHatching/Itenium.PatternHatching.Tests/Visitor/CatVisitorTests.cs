@@ -1,7 +1,7 @@
 using Itenium.PatternHatching.Proxy;
 using Itenium.PatternHatching.Visitor;
 
-namespace Itenium.PatternHatching.Tests;
+namespace Itenium.PatternHatching.Tests.Visitor;
 
 public class CatVisitorTests
 {

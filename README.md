@@ -46,3 +46,9 @@ Designing with Patterns (p11)
 See `Itenium.PatternHatching` for an implementation in C#
 and `MultipleDispatch` how VISITOR is not needed in a
 language such as Julia.
+
+
+### Multi-User Protection (p34)
+
+- TEMPLATE METHOD: have the base Node class implement security so the subclasses don't have to worry about it
+- SINGLETON: a "Multiton" implementation for the Users of the system
