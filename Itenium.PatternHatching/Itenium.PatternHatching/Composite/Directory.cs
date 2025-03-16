@@ -1,6 +1,5 @@
 ﻿using Itenium.PatternHatching.Singleton;
 using Itenium.PatternHatching.Visitor;
-using System.IO.Abstractions;
 
 namespace Itenium.PatternHatching.Composite;
 
@@ -25,16 +24,18 @@ public class Directory : Node
         return _nodes.Remove(node);
     }
 
+    #region Template Method
     protected override StreamReader GetReaderCore(User? user = null) => new(Stream.Null);
+    protected override string GetWarning(Warning type)
+    {
+        return $"Directory is {type}";
+    }
+    #endregion
 
     #region Visitor
     public override T Accept<T>(IVisitor<T> visitor)
     {
         return visitor.Visit(this);
     }
-    #endregion
-
-    #region Template Method
-    protected internal override IFileSystemInfo Info => new DirectoryInfoWrapper(new FileSystem(), new DirectoryInfo(""));
     #endregion
 }
