@@ -22,7 +22,7 @@ Top Ten Misconceptions (p3):
         1. Dismissed as rubbish
         2. It's nonviable
         3. Obvious and trivial "What've been doing all along"
-- _Seen one, seem them all_
+- _Seen one, seen them all_
 - _Patterns need tool or methodological support to be effective_
     - Patterns capture expertise and make it accsible to non-experts
     - Their names form a vocabulary to aid communication
