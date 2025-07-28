@@ -63,3 +63,76 @@ Chapter 3
 ---------
 
 Themes and Variations (p55)
+
+**To kill a singleton**:  
+If we use a singleton for User which is created with `User::logIn`,
+how do we manage User destruction?
+
+Not really an issue when you're working in a Garbage Collected language!
+
+
+**The Trouble with Observer**:  
+A lot of redundancy due the Subject/Observer parallel hierarchy.
+Have coarser grained Subject/Observers?
+
+- For a UI redrawing everything, that could be very inefficient
+- Have a `dirty` flag to keep track of what has changed?
+
+This is also not really an issue when this is a language feature
+(like in .NET)
+
+
+**Visitor Revisited**:  
+Make sure your hierarchy is somewhat stable when using visitor.
+
+
+**Generation Gap**:  
+Re-generate code but do allow to modify the generated code.  
+Examples: VB6, .NET WinForms, gRPC.  
+Using: Composition (ex Partials in .NET), or inheritance.
+
+
+**Type Laundering**:  
+Explicit casts are a sure sign of a design bug. How to create "events"
+when we don't know what the events will be, how to access the specific
+data and methods?
+
+- Factory Method
+- Prototype
+- Generics/Templates
+
+If you have an interface for, for example Factory Method, it must use
+the base but if you want to do something with it, you have to work
+with the derived type.
+
+In .NET, we have `IEnumerable` and `IEnumerable<T>` because the first
+version didn't have generics.
+
+```c#
+// Example
+string json = JsonConvert.SerializeObject(someUnknownType);
+T recovered = JsonConvert.DeserializeObject<T>(json);
+```
+
+
+**Thanks for the memory leaks**:  
+Handle-Body Idiom (Pimpl — Pointer to IMPLementation)
+
+Still useful in a managed language in some cases.  
+Ex: A public handle and internal impl.  
+Ex: Hide volatile internal type behind more stable public type
+
+
+**Pushme-Pullyu**:  
+A new event should result in creating one new class only.
+
+Suggestion: static register/notify methods on the event class?
+Have XEvent and XHandler classes?
+
+--> Real solution? MULTICAST pattern?
+
+
+Chapter 4
+---------
+
+Labor of Love (p111)
