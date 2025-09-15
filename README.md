@@ -137,7 +137,7 @@ Chapter 4
 
 Labor of Love (p111)
 
-- Multicast: How is different from Observer
+- Multicast: How it is different from Observer
     - Observer: Register yourself to the source (Subject) to be notified when it changes (You observe something)
     - Multicast: Register yourself to an event to be notified when it happened, without knowing the source
         - Example: KeyPressEvent from both a Keyboard/Keypad. You don't care where the event originated from
