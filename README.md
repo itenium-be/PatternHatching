@@ -136,3 +136,25 @@ Chapter 4
 ---------
 
 Labor of Love (p111)
+
+- Multicast: How is different from Observer
+    - Observer: Register yourself to the source (Subject) to be notified when it changes (You observe something)
+    - Multicast: Register yourself to an event to be notified when it happened, without knowing the source
+        - Example: KeyPressEvent from both a Keyboard/Keypad. You don't care where the event originated from
+- Multicast: Refinement of Observer + Typed Message?
+
+
+Chapter 5
+---------
+
+Seven Habits of Effective Pattern Writers (p133)
+
+- Taking time to reflect
+- Adhering to a structure
+- Being Concrete Early and Often
+- Keeping Patterns Distinct and Complementary
+- Presenting Effectively
+- Iterating Tirelessly
+- Collecting and Incorporating Feedback
+
+No Silver Bullet.
